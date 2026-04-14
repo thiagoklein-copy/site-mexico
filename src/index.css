@@ -120,56 +120,41 @@ body {
   overflow: hidden;
   border-radius: 18px;
   border: 1px solid #00000012;
-  background: #f3f4f6;
+  background: #dce7ef;
 }
 
 .map-surface {
-  position: relative;
   min-height: 470px;
-  background-image:
-    radial-gradient(circle at 70% 45%, rgba(232, 75, 42, 0.14), transparent 42%),
-    radial-gradient(circle at 48% 41%, rgba(232, 75, 42, 0.11), transparent 36%),
-    linear-gradient(155deg, #ecf3f9, #e7f0e4);
 }
 
-.map-surface::after {
-  content: 'México';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #1a1a1a1c;
-  pointer-events: none;
+.map-surface .leaflet-control-attribution {
+  font-size: 10px;
+  background: #ffffffd4;
 }
 
-.map-pin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  height: 36px;
-  width: 36px;
+.map-pin-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
   border-radius: 9999px;
   border: 1px solid #ffffff;
   background: #e84b2a;
   box-shadow: 0 8px 16px rgba(232, 75, 42, 0.35);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.map-pin:hover {
-  transform: translate(-50%, -50%) scale(1.08);
+.map-pin-icon-wrapper:hover {
+  transform: scale(1.08);
 }
 
-.map-pin.active {
-  background: #cd3e21;
-  box-shadow: 0 10px 22px rgba(232, 75, 42, 0.45);
+.map-pin-icon-wrapper.active {
+  background: #c83b1f;
+  box-shadow: 0 10px 22px rgba(232, 75, 42, 0.5);
 }
 
-.map-pin-dot {
+.map-pin-icon-dot {
   display: block;
   height: 12px;
   width: 12px;

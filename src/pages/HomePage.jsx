@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import L from 'leaflet'
+import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 import { Link } from 'react-router-dom'
 
 const badges = ['Oficinas privadas', 'Coworking', 'Oficina virtual', 'Salas de juntas', 'Podcast room']
@@ -32,6 +34,7 @@ const locations = [
     mapX: 64,
     mapY: 48,
     mapsUrl: 'https://maps.google.com/?q=Av.+Homero+229+Ofi.+501+Polanco+CDMX',
+    coordinates: [19.4329, -99.1961],
     photos: [
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80',
@@ -46,6 +49,7 @@ const locations = [
     mapX: 62,
     mapY: 46,
     mapsUrl: 'https://maps.google.com/?q=Blvrd.+Manuel+Avila+Camacho+235+Polanco+CDMX',
+    coordinates: [19.4365, -99.2095],
     photos: [
       'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
@@ -60,6 +64,7 @@ const locations = [
     mapX: 66,
     mapY: 53,
     mapsUrl: 'https://maps.google.com/?q=Av.+Rio+Mixcoac+39+Benito+Juarez+CDMX',
+    coordinates: [19.3702, -99.1868],
     photos: [
       'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80',
@@ -74,6 +79,7 @@ const locations = [
     mapX: 67,
     mapY: 56,
     mapsUrl: 'https://maps.google.com/?q=Av.+Insurgentes+Sur+1783+CDMX',
+    coordinates: [19.3599, -99.186],
     photos: [
       'https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80',
@@ -88,6 +94,7 @@ const locations = [
     mapX: 50,
     mapY: 41,
     mapsUrl: 'https://maps.google.com/?q=The+Village+at+Juriquilla+Queretaro',
+    coordinates: [20.7088, -100.4444],
     photos: [
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=900&q=80',
@@ -102,6 +109,7 @@ const locations = [
     mapX: 63,
     mapY: 50,
     mapsUrl: 'https://maps.google.com/?q=Mariano+Escobedo+724+Anzures+CDMX',
+    coordinates: [19.4382, -99.1779],
     photos: [
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=900&q=80',
@@ -148,6 +156,24 @@ function useRevealOnScroll() {
     items.forEach((item) => observer.observe(item))
     return () => observer.disconnect()
   }, [])
+}
+
+const getPinIcon = (isActive) =>
+  L.divIcon({
+    className: `map-pin-icon-wrapper ${isActive ? 'active' : ''}`,
+    html: '<span class="map-pin-icon-dot"></span>',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+  })
+
+function MapRecenter({ coordinates }) {
+  const map = useMap()
+
+  useEffect(() => {
+    map.flyTo(coordinates, map.getZoom(), { duration: 0.75 })
+  }, [coordinates, map])
+
+  return null
 }
 
 export function HomePage() {
@@ -425,20 +451,28 @@ export function HomePage() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
             <div className="reveal map-shell">
-              <div className="map-surface">
+              <MapContainer
+                center={[23.6345, -102.5528]}
+                zoom={5}
+                minZoom={4}
+                maxZoom={17}
+                className="map-surface"
+                scrollWheelZoom={false}
+              >
+                <MapRecenter coordinates={selectedLocation.coordinates} />
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
                 {locations.map((location) => (
-                  <button
+                  <Marker
                     key={location.id}
-                    type="button"
-                    className={`map-pin ${selectedLocation.id === location.id ? 'active' : ''}`}
-                    style={{ left: `${location.mapX}%`, top: `${location.mapY}%` }}
-                    onClick={() => setSelectedLocationId(location.id)}
-                    aria-label={`Ver detalles de ${location.name}`}
-                  >
-                    <span className="map-pin-dot" />
-                  </button>
+                    position={location.coordinates}
+                    icon={getPinIcon(selectedLocation.id === location.id)}
+                    eventHandlers={{ click: () => setSelectedLocationId(location.id) }}
+                  />
                 ))}
-              </div>
+              </MapContainer>
             </div>
 
             <aside className="reveal card p-5 md:p-6">
