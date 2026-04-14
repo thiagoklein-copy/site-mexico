@@ -24,40 +24,88 @@ const services = [
 
 const locations = [
   {
+    id: 'polanco',
     city: 'CDMX',
     name: 'Polanco',
     address: 'Av. Homero 229 Ofi. 501 Colonia Polanco I Sección. Miguel Hidalgo, C.P. 11560',
     tags: ['Oficinas Privadas', 'Oficinas Virtuales', 'Coworking', 'Tour Virtual'],
+    mapX: 64,
+    mapY: 48,
+    mapsUrl: 'https://maps.google.com/?q=Av.+Homero+229+Ofi.+501+Polanco+CDMX',
+    photos: [
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80',
+    ],
   },
   {
+    id: 'periferico-lomas',
     city: 'CDMX',
     name: 'Periférico Lomas',
     address: 'Blvrd. Manuel Ávila Camacho 235, Piso 2, Polanco I Sección. Miguel Hidalgo, C.P. 11510',
     tags: ['Oficinas Privadas', 'Oficinas Virtuales', 'Coworking', 'Tour Virtual'],
+    mapX: 62,
+    mapY: 46,
+    mapsUrl: 'https://maps.google.com/?q=Blvrd.+Manuel+Avila+Camacho+235+Polanco+CDMX',
+    photos: [
+      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
+    ],
   },
   {
+    id: 'insurgentes-mixcoac',
     city: 'CDMX',
     name: 'Insurgentes Mixcoac',
     address: 'Av. Río Mixcoac 39-103, Col. Insurgentes Mixcoac, Benito Juárez C.P. 03920',
     tags: ['Oficinas Privadas', 'Oficinas Virtuales', 'Tour Virtual'],
+    mapX: 66,
+    mapY: 53,
+    mapsUrl: 'https://maps.google.com/?q=Av.+Rio+Mixcoac+39+Benito+Juarez+CDMX',
+    photos: [
+      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80',
+    ],
   },
   {
+    id: 'insurgentes-sur',
     city: 'CDMX',
     name: 'Insurgentes Sur',
     address: 'Av. Insurgentes Sur 1783-301, Col. Guadalupe Inn, Álvaro Obregón, C.P. 01020',
     tags: ['Oficinas Privadas', 'Oficinas Virtuales', 'Coworking', 'Tour Virtual'],
+    mapX: 67,
+    mapY: 56,
+    mapsUrl: 'https://maps.google.com/?q=Av.+Insurgentes+Sur+1783+CDMX',
+    photos: [
+      'https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=80',
+    ],
   },
   {
+    id: 'juriquilla',
     city: 'Querétaro',
     name: 'Juriquilla',
     address: 'The Village at Juriquilla Piso 4, ofi. 409, Blvd. de las Ciencias 3015, C.P. 76230',
     tags: ['Oficinas Privadas', 'Oficinas Virtuales', 'Coworking', 'Tour Virtual'],
+    mapX: 50,
+    mapY: 41,
+    mapsUrl: 'https://maps.google.com/?q=The+Village+at+Juriquilla+Queretaro',
+    photos: [
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=900&q=80',
+    ],
   },
   {
+    id: 'mariano-escobedo',
     city: 'CDMX',
     name: 'Mariano Escobedo',
     address: 'Calz. Gral. Mariano Escobedo 724 Of. 701, Anzures, Miguel Hidalgo, 11590 CDMX',
     tags: ['Oficinas Virtuales', 'Coworking', 'Sala de Podcast', 'Tour Virtual'],
+    mapX: 63,
+    mapY: 50,
+    mapsUrl: 'https://maps.google.com/?q=Mariano+Escobedo+724+Anzures+CDMX',
+    photos: [
+      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=900&q=80',
+    ],
   },
 ]
 
@@ -104,6 +152,7 @@ function useRevealOnScroll() {
 
 export function HomePage() {
   const [showNav, setShowNav] = useState(true)
+  const [selectedLocationId, setSelectedLocationId] = useState(locations[0].id)
 
   useRevealOnScroll()
 
@@ -123,6 +172,8 @@ export function HomePage() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const selectedLocation = locations.find((location) => location.id === selectedLocationId) ?? locations[0]
 
   return (
     <div className="bg-white text-[#1A1A1A]">
@@ -359,6 +410,73 @@ export function HomePage() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-7xl px-6 py-24">
+          <p className="section-label">Mapa de ubicaciones</p>
+          <h2 className="reveal mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
+            Encuentra tu sede ideal en México
+          </h2>
+          <p className="reveal mt-5 max-w-3xl text-[#6B7280]">
+            Haz clic en cada pin para ver fotos, dirección y servicios disponibles en cada
+            inmueble.
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+            <div className="reveal map-shell">
+              <div className="map-surface">
+                {locations.map((location) => (
+                  <button
+                    key={location.id}
+                    type="button"
+                    className={`map-pin ${selectedLocation.id === location.id ? 'active' : ''}`}
+                    style={{ left: `${location.mapX}%`, top: `${location.mapY}%` }}
+                    onClick={() => setSelectedLocationId(location.id)}
+                    aria-label={`Ver detalles de ${location.name}`}
+                  >
+                    <span className="map-pin-dot" />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <aside className="reveal card p-5 md:p-6">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#E84B2A]">
+                    {selectedLocation.city}
+                  </p>
+                  <h3 className="mt-1 text-2xl font-semibold">{selectedLocation.name}</h3>
+                </div>
+                <a
+                  href={selectedLocation.mapsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost px-4 py-2 text-xs"
+                >
+                  Ver mapa
+                </a>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">{selectedLocation.address}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {selectedLocation.tags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-black/10 px-3 py-1 text-xs">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                {selectedLocation.photos.map((photo, index) => (
+                  <img
+                    key={`${selectedLocation.id}-${index}`}
+                    src={photo}
+                    alt={`${selectedLocation.name} foto ${index + 1}`}
+                    className="h-28 w-full rounded-xl object-cover"
+                  />
+                ))}
+              </div>
+            </aside>
           </div>
         </section>
 
