@@ -207,9 +207,12 @@ export function HomePage() {
         className={`fixed top-0 z-50 w-full border-b border-black/5 bg-white/95 backdrop-blur transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="mx-auto flex min-h-[60px] w-full max-w-7xl flex-wrap items-center gap-4 px-6 py-2">
-          <a href="#inicio" className="flex items-center gap-2 text-lg font-semibold">
-            <span className="inline-block h-3 w-3 rounded-sm bg-[#1A1A1A]" />
-            mi oficina en
+          <a href="#inicio" className="flex items-center">
+            <img
+              src="/logo-moe.png"
+              alt="Mi Oficina En"
+              className="h-9 w-auto rounded-sm object-contain"
+            />
           </a>
           <nav className="flex flex-1 flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">
             <Link to="/inicio" className="nav-item">
@@ -633,10 +636,11 @@ export function HomePage() {
 
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-10 md:grid-cols-4">
             <div>
-              <p className="flex items-center gap-2 text-xl font-semibold">
-                <span className="h-3 w-3 rounded-full bg-[#c9d42b]" />
-                mi oficina en
-              </p>
+              <img
+                src="/logo-moe.png"
+                alt="Mi Oficina En"
+                className="h-10 w-auto rounded-sm object-contain"
+              />
               <p className="mt-3 text-sm text-white/60">Espacios que impulsan negocios.</p>
             </div>
             <div>
