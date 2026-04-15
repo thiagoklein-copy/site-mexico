@@ -190,7 +190,7 @@ export function HomePage() {
             <img
               src="/logo-moe.png"
               alt="Mi Oficina En"
-              className="h-12 w-auto rounded-sm object-contain"
+              className="h-16 w-auto rounded-sm object-contain"
             />
           </a>
           <nav className="flex flex-1 flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">
