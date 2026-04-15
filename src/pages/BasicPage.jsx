@@ -4,12 +4,12 @@ export function BasicPage({ title, description }) {
   return (
     <div className="min-h-screen bg-[#f5f5f5] text-[#1a1a1a]">
       <header className="fixed top-0 z-40 w-full border-b border-black/5 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex min-h-[60px] w-full max-w-7xl flex-wrap items-center gap-4 px-6 py-2">
+        <div className="mx-auto flex min-h-[60px] w-full max-w-7xl flex-wrap items-center gap-4 px-6 py-1">
           <Link to="/inicio" className="flex items-center">
             <img
               src="/logo-moe.png"
               alt="Mi Oficina En"
-              className="h-20 w-auto rounded-sm object-contain"
+              className="h-12 w-auto rounded-sm object-contain"
             />
           </Link>
           <nav className="flex flex-1 flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">

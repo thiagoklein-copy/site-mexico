@@ -185,12 +185,12 @@ export function HomePage() {
       <header
         className={`fixed top-0 z-50 w-full border-b border-black/5 bg-white/95 backdrop-blur transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}
       >
-        <div className="mx-auto flex min-h-[60px] w-full max-w-7xl flex-wrap items-center gap-4 px-6 py-2">
+        <div className="mx-auto flex min-h-[60px] w-full max-w-7xl flex-wrap items-center gap-4 px-6 py-1">
           <a href="#inicio" className="flex items-center">
             <img
               src="/logo-moe.png"
               alt="Mi Oficina En"
-              className="h-20 w-auto rounded-sm object-contain"
+              className="h-12 w-auto rounded-sm object-contain"
             />
           </a>
           <nav className="flex flex-1 flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">
