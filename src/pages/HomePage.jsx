@@ -117,27 +117,6 @@ const locations = [
   },
 ]
 
-const posts = [
-  {
-    date: '14 Abr, 2026',
-    title: 'Cómo elegir la oficina ideal para una empresa en crecimiento',
-    image:
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    date: '11 Abr, 2026',
-    title: '5 ventajas de trabajar en coworking para equipos híbridos',
-    image:
-      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    date: '08 Abr, 2026',
-    title: 'Tu oficina virtual como base para escalar en México',
-    image:
-      'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
-  },
-]
-
 function useRevealOnScroll() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -415,33 +394,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="espacios" className="bg-[#f9f9f9] px-6 py-24">
-          <div className="mx-auto w-full max-w-7xl">
-            <p className="section-label">Ubicaciones</p>
-            <h2 className="reveal mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
-              Espacios estratégicos en CDMX y Querétaro
-            </h2>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              {locations.map((location) => (
-                <article key={location.name} className="reveal card">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-[#c9d42b]">
-                    {location.city}
-                  </p>
-                  <h3 className="mt-2 text-3xl font-semibold">{location.name}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">{location.address}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {location.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-black/10 px-3 py-1 text-xs">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="mx-auto w-full max-w-7xl px-6 py-24">
           <p className="section-label">Mapa de ubicaciones</p>
           <h2 className="reveal mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
@@ -542,31 +494,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-6 pb-24">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="section-label">Blog y noticias</p>
-              <h2 className="reveal mt-3 text-4xl font-semibold md:text-6xl">
-                Descubre nuestros últimos posts
-              </h2>
-            </div>
-            <a href="#inicio" className="btn-ghost">
-              Ver todo
-            </a>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {posts.map((post) => (
-              <article key={post.title} className="reveal card overflow-hidden p-0">
-                <img src={post.image} alt={post.title} className="aspect-video w-full object-cover" />
-                <div className="p-6">
-                  <p className="text-sm text-[#6B7280]">{post.date}</p>
-                  <h3 className="mt-3 text-2xl font-semibold">{post.title}</h3>
-                  <button className="btn-ghost mt-6">Leer más</button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
       </main>
 
       <footer id="contacto" className="bg-[#111] px-6 py-20 text-white">
