@@ -41,7 +41,7 @@ export function BasicPage({ title, description }) {
             Volver al inicio
           </Link>
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#e84b2a]">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#c9d42b]">
               Mi Oficina En
             </p>
             <h1 className="text-4xl font-bold">{title}</h1>

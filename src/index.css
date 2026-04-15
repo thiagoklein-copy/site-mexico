@@ -17,22 +17,22 @@ body {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #e84b2a;
+  color: #c9d42b;
 }
 
 .btn-primary {
-  border: 1px solid #e84b2a;
+  border: 1px solid #c9d42b;
   border-radius: 9999px;
-  background: #e84b2a;
-  color: white;
+  background: #c9d42b;
+  color: #1a1a1a;
   padding: 14px 28px;
   font-weight: 600;
   transition: all 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #cd3e21;
-  border-color: #cd3e21;
+  background: #b2be24;
+  border-color: #b2be24;
 }
 
 .btn-ghost {
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-item:hover {
-  color: #e84b2a;
+  color: #c9d42b;
   background: #00000008;
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .input-field:focus {
-  border-color: #e84b2a;
+  border-color: #c9d42b;
 }
 
 .map-shell {
@@ -140,8 +140,8 @@ body {
   width: 30px;
   border-radius: 9999px;
   border: 1px solid #ffffff;
-  background: #e84b2a;
-  box-shadow: 0 8px 16px rgba(232, 75, 42, 0.35);
+  background: #c9d42b;
+  box-shadow: 0 8px 16px rgba(201, 212, 43, 0.35);
   transition: transform 0.2s ease;
 }
 
@@ -150,8 +150,8 @@ body {
 }
 
 .map-pin-icon-wrapper.active {
-  background: #c83b1f;
-  box-shadow: 0 10px 22px rgba(232, 75, 42, 0.5);
+  background: #b2be24;
+  box-shadow: 0 10px 22px rgba(201, 212, 43, 0.5);
 }
 
 .map-pin-icon-dot {

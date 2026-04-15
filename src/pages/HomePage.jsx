@@ -339,7 +339,7 @@ export function HomePage() {
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
               {services.map((service) => (
                 <article key={service.title} className="reveal card text-left">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#E84B2A]/10 text-[#E84B2A]">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#c9d42b]/10 text-[#c9d42b]">
                     ●
                   </span>
                   <h3 className="mt-5 text-3xl font-semibold">{service.title}</h3>
@@ -377,7 +377,7 @@ export function HomePage() {
                 ['$1B', 'Valor operado por clientes'],
               ].map(([number, text]) => (
                 <div key={number} className="reveal rounded-2xl bg-white p-6 shadow-sm">
-                  <p className="text-5xl font-bold text-[#E84B2A]">{number}</p>
+                  <p className="text-5xl font-bold text-[#c9d42b]">{number}</p>
                   <p className="mt-3 font-semibold">{text}</p>
                   <p className="mt-2 text-sm text-[#6B7280]">
                     Resultados medibles para equipos que buscan crecer con estructura.
@@ -406,7 +406,7 @@ export function HomePage() {
           </blockquote>
           <p className="mt-5 text-[#6B7280]">Ana Martínez · Directora de Operaciones</p>
           <div className="mt-6 flex justify-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#E84B2A]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#c9d42b]" />
             <span className="h-2.5 w-2.5 rounded-full bg-black/20" />
             <span className="h-2.5 w-2.5 rounded-full bg-black/20" />
           </div>
@@ -421,7 +421,7 @@ export function HomePage() {
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               {locations.map((location) => (
                 <article key={location.name} className="reveal card">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-[#E84B2A]">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-[#c9d42b]">
                     {location.city}
                   </p>
                   <h3 className="mt-2 text-3xl font-semibold">{location.name}</h3>
@@ -478,7 +478,7 @@ export function HomePage() {
             <aside className="reveal card p-5 md:p-6">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#E84B2A]">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#c9d42b]">
                     {selectedLocation.city}
                   </p>
                   <h3 className="mt-1 text-2xl font-semibold">{selectedLocation.name}</h3>
@@ -530,7 +530,7 @@ export function HomePage() {
             ].map(([name, price, description]) => (
               <article key={name} className="reveal card">
                 <h3 className="text-2xl font-semibold">{name}</h3>
-                <p className="mt-3 text-4xl font-bold text-[#E84B2A]">{price}</p>
+                <p className="mt-3 text-4xl font-bold text-[#c9d42b]">{price}</p>
                 <p className="mt-2 text-[#6B7280]">{description}</p>
                 <ul className="mt-6 space-y-2 text-sm text-[#6B7280]">
                   <li>Access to basic features</li>
@@ -546,18 +546,18 @@ export function HomePage() {
         </section>
 
         <section className="px-6 pb-24">
-          <div className="mx-auto grid w-full max-w-7xl gap-8 rounded-3xl bg-[#E84B2A] p-10 text-white lg:grid-cols-2 lg:p-14">
+          <div className="mx-auto grid w-full max-w-7xl gap-8 rounded-3xl bg-[#c9d42b] p-10 text-[#1a1a1a] lg:grid-cols-2 lg:p-14">
             <div className="reveal">
               <h2 className="text-4xl font-semibold md:text-5xl">
                 Empodera tu empresa con los espacios de Mi Oficina En
               </h2>
-              <p className="mt-5 max-w-xl text-white/90">
+              <p className="mt-5 max-w-xl text-[#1a1a1a]/80">
                 Soluciones listas para operar, atención personalizada y ubicaciones estratégicas en
                 México.
               </p>
               <a
                 href="#contacto"
-                className="mt-8 inline-flex rounded-full bg-white px-7 py-3.5 font-semibold text-[#E84B2A] transition hover:bg-[#f5f5f5]"
+                className="mt-8 inline-flex rounded-full bg-[#1a1a1a] px-7 py-3.5 font-semibold text-white transition hover:bg-black/85"
               >
                 Let&apos;s Get Started
               </a>
@@ -634,7 +634,7 @@ export function HomePage() {
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-10 md:grid-cols-4">
             <div>
               <p className="flex items-center gap-2 text-xl font-semibold">
-                <span className="h-3 w-3 rounded-full bg-[#E84B2A]" />
+                <span className="h-3 w-3 rounded-full bg-[#c9d42b]" />
                 mi oficina en
               </p>
               <p className="mt-3 text-sm text-white/60">Espacios que impulsan negocios.</p>
