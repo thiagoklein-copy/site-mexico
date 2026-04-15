@@ -517,37 +517,6 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="precios" className="mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="section-label">Precios transparentes</p>
-          <h2 className="reveal mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
-            Desbloquea valor y flexibilidad para tu negocio
-          </h2>
-          <a href="#contacto" className="btn-primary reveal mt-8 inline-flex">
-            Comenzar ahora
-          </a>
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {[
-              ['Basic', '$10/mes', 'Nuestro plan más popular.'],
-              ['Business', '$20/mes', 'Funciones avanzadas y reportes.'],
-              ['Enterprise', '$40/mes', 'Todas las funcionalidades sin límites.'],
-            ].map(([name, price, description]) => (
-              <article key={name} className="reveal card">
-                <h3 className="text-2xl font-semibold">{name}</h3>
-                <p className="mt-3 text-4xl font-bold text-[#c9d42b]">{price}</p>
-                <p className="mt-2 text-[#6B7280]">{description}</p>
-                <ul className="mt-6 space-y-2 text-sm text-[#6B7280]">
-                  <li>Access to basic features</li>
-                  <li>Basic reporting and analytics</li>
-                  <li>Up to 10 individual users</li>
-                  <li>20GB individual data each user</li>
-                  <li>Basic chat and email support</li>
-                </ul>
-                <button className="btn-primary mt-8 w-full justify-center">Get Started</button>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="px-6 pb-24">
           <div className="mx-auto grid w-full max-w-7xl gap-8 rounded-3xl bg-[#c9d42b] p-10 text-[#1a1a1a] lg:grid-cols-2 lg:p-14">
             <div className="reveal">
