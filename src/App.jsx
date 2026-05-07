@@ -7,22 +7,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigate to="/inicio" replace />} />
       <Route path="/inicio" element={<HomePage />} />
-      <Route
-        path="/somos"
-        element={<BasicPage title="Somos" description="Muy pronto publicaremos esta sección." />}
-      />
-      <Route
-        path="/espacios"
-        element={<BasicPage title="Espacios" description="Muy pronto publicaremos esta sección." />}
-      />
-      <Route
-        path="/servicios"
-        element={<BasicPage title="Servicios" description="Muy pronto publicaremos esta sección." />}
-      />
-      <Route
-        path="/contacto"
-        element={<BasicPage title="Contacto" description="Muy pronto publicaremos esta sección." />}
-      />
+      <Route path="/oficina-privada" element={<BasicPage page="oficina-privada" />} />
+      <Route path="/oficina-virtual" element={<BasicPage page="oficina-virtual" />} />
+      <Route path="/coworking" element={<BasicPage page="coworking" />} />
+      <Route path="/salas-de-juntas" element={<BasicPage page="salas-de-juntas" />} />
+      <Route path="/contacto" element={<BasicPage page="contacto" />} />
     </Routes>
   )
 }
