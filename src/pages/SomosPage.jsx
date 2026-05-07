@@ -94,31 +94,33 @@ export function SomosPage() {
         </section>
 
         <section className="mx-auto w-full max-w-7xl px-6 py-14">
-          <h2 className="text-3xl font-semibold md:text-4xl">Una Gran Idea</h2>
-          <p className="mt-6 max-w-4xl text-[#6B7280]">
-            Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
-          </p>
-        </section>
-
-        <section className="mx-auto w-full max-w-7xl px-6 py-20">
           <div className="grid gap-6 md:grid-cols-2">
+            <article className="card flex flex-col justify-center">
+              <h2 className="text-3xl font-semibold md:text-4xl">Una Gran Idea</h2>
+              <p className="mt-6 text-[#6B7280]">
+                Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
+              </p>
+            </article>
             <img
               src="/foto_Somos_interior_1.png"
               alt="foto_Somos_interior_1"
               className="h-[300px] w-full rounded-2xl object-cover"
             />
+          </div>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
             <img
               src="/foto_Somos_interior_2.png"
               alt="foto_Somos_interior_2"
               className="h-[300px] w-full rounded-2xl object-cover"
             />
+            <article className="card flex flex-col justify-center">
+              <h2 className="text-4xl font-semibold">Asistencia Empresarial</h2>
+              <p className="mt-4 text-[#6B7280]">
+                Nuestro objetivo es ofrecer espacios de trabajo a empresas emergentes, pequeñas, medianas y grandes de todos los sectores y a profesionales que trabajan de manera independiente.
+              </p>
+            </article>
           </div>
-          <article className="card mt-8">
-            <h2 className="text-4xl font-semibold">Asistencia Empresarial</h2>
-            <p className="mt-4 max-w-4xl text-[#6B7280]">
-              Nuestro objetivo es ofrecer espacios de trabajo a empresas emergentes, pequeñas, medianas y grandes de todos los sectores y a profesionales que trabajan de manera independiente.
-            </p>
-          </article>
         </section>
 
         <section className="bg-white px-6 py-20">
