@@ -1,16 +1,14 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { BasicPage } from './pages/BasicPage'
 import { HomePage } from './pages/HomePage'
+import { SomosPage } from './pages/SomosPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/inicio" replace />} />
       <Route path="/inicio" element={<HomePage />} />
-      <Route
-        path="/somos"
-        element={<BasicPage title="Somos" description="Muy pronto publicaremos esta sección." />}
-      />
+      <Route path="/somos" element={<SomosPage />} />
       <Route
         path="/espacios"
         element={<BasicPage title="Espacios" description="Muy pronto publicaremos esta sección." />}
