@@ -205,3 +205,22 @@ body {
     min-height: 380px;
   }
 }
+
+.somos-marquee {
+  width: 100%;
+}
+
+.somos-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: somos-marquee-scroll 40s linear infinite;
+}
+
+@keyframes somos-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
