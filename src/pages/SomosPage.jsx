@@ -79,7 +79,7 @@ export function SomosPage() {
 
       <main className="pt-[60px]">
         <section className="bg-[#071b46] px-6 py-20 text-white">
-          <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr]">
+          <div className="mx-auto w-full max-w-7xl">
             <div>
               <p className="section-label !text-[#c9d42b]">Conoce nuestra historia</p>
               <h1 className="mt-4 text-5xl font-bold md:text-6xl">Somos</h1>
@@ -88,11 +88,6 @@ export function SomosPage() {
                 Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
               </p>
             </div>
-            <img
-              src="/foto_Somos_interior_1.png"
-              alt="foto_Somos_interior_1"
-              className="h-full min-h-[280px] w-full rounded-2xl object-cover shadow-2xl"
-            />
           </div>
         </section>
 
