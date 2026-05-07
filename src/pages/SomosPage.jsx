@@ -78,16 +78,22 @@ export function SomosPage() {
       </header>
 
       <main className="pt-[60px]">
-        <section className="bg-[#071b46] px-6 py-20 text-white">
+        <section
+          className="relative overflow-hidden px-6 py-24 text-white md:py-28"
+          style={{
+            backgroundImage:
+              "linear-gradient(110deg, rgba(7,27,70,0.82) 0%, rgba(7,27,70,0.62) 50%, rgba(7,27,70,0.72) 100%), url('/foto_Somos_hero.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <div className="mx-auto w-full max-w-7xl">
-            <div>
-              <p className="section-label !text-[#c9d42b]">Conoce nuestra historia</p>
-              <h1 className="mt-4 text-5xl font-bold md:text-6xl">Somos</h1>
-              <h2 className="mt-3 text-3xl font-semibold md:text-5xl">Una Gran Idea</h2>
-              <p className="mt-6 max-w-3xl text-white/85">
-                Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
-              </p>
-            </div>
+            <p className="section-label !text-[#c9d42b]">Conoce nuestra historia</p>
+            <h1 className="mt-4 text-6xl font-bold leading-none md:text-7xl">Somos</h1>
+            <h2 className="mt-3 text-2xl font-semibold md:text-4xl">Una Gran Idea</h2>
+            <p className="mt-6 max-w-3xl text-white/90">
+              Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
+            </p>
           </div>
         </section>
 
