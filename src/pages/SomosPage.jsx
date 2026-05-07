@@ -87,14 +87,17 @@ export function SomosPage() {
             backgroundPosition: 'center',
           }}
         >
-          <div className="mx-auto w-full max-w-7xl">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center text-center">
             <p className="section-label !text-[#c9d42b]">Conoce nuestra historia</p>
             <h1 className="mt-4 text-6xl font-bold leading-none md:text-7xl">Somos</h1>
-            <h2 className="mt-3 text-2xl font-semibold md:text-4xl">Una Gran Idea</h2>
-            <p className="mt-6 max-w-3xl text-white/90">
-              Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
-            </p>
           </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-7xl px-6 py-14">
+          <h2 className="text-3xl font-semibold md:text-4xl">Una Gran Idea</h2>
+          <p className="mt-6 max-w-4xl text-[#6B7280]">
+            Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
+          </p>
         </section>
 
         <section className="mx-auto w-full max-w-7xl px-6 py-20">
