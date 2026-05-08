@@ -4,6 +4,12 @@ import { motion, useReducedMotion } from 'framer-motion'
 export function LogoMarquee({ logos }) {
   const shouldReduceMotion = useReducedMotion()
   const doubled = useMemo(() => [...logos, ...logos], [logos])
+  const renderLogo = (logo) => {
+    if (logo === 'logo_acp') {
+      return <img src="/logo_acp.png" alt="Logo Corporativo ACP" className="mx-auto h-10 w-auto object-contain" />
+    }
+    return logo
+  }
 
   if (shouldReduceMotion) {
     return (
@@ -13,7 +19,7 @@ export function LogoMarquee({ logos }) {
             key={logo}
             className="rounded-2xl border border-white/20 bg-white/5 p-6 text-center font-semibold text-white"
           >
-            {logo}
+            {renderLogo(logo)}
           </div>
         ))}
       </div>
@@ -31,7 +37,7 @@ export function LogoMarquee({ logos }) {
             key={`${logo}-${index}`}
             className="mx-3 min-w-[220px] rounded-2xl border border-white/20 bg-white/5 p-6 text-center font-semibold text-white"
           >
-            {logo}
+            {renderLogo(logo)}
           </div>
         ))}
       </motion.div>
