@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AnimatedCounter } from '../components/AnimatedCounter'
 import { FadeIn } from '../components/FadeIn'
 import { LogoMarquee } from '../components/LogoMarquee'
+import { SiteFooter } from '../components/SiteFooter'
 
 export function SomosPage() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -208,6 +209,7 @@ export function SomosPage() {
           </motion.div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }

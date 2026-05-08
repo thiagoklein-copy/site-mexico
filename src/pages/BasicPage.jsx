@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SiteFooter } from '../components/SiteFooter'
 
 export function BasicPage({ title, description }) {
   return (
@@ -52,6 +53,7 @@ export function BasicPage({ title, description }) {
           </div>
         </div>
       </main>
+      <SiteFooter />
     </div>
   )
 }
