@@ -8,6 +8,9 @@ export function LogoMarquee({ logos }) {
     if (logo === 'logo_acp') {
       return <img src="/logo_acp.png" alt="Logo Corporativo ACP" className="mx-auto h-10 w-auto object-contain" />
     }
+    if (logo === 'logo_MOE') {
+      return <img src="/logo_moe_carrossel.png" alt="Logo Mi Oficina En" className="mx-auto h-10 w-auto object-contain" />
+    }
     return logo
   }
 
