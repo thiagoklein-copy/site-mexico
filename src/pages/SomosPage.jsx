@@ -121,7 +121,7 @@ export function SomosPage() {
                 <img
                   src="/foto_Somos_interior_2.png"
                   alt="foto_Somos_interior_2"
-                  className="h-[300px] w-full rounded-2xl object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-[300px] w-full rounded-2xl object-cover object-[center_62%] transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </FadeIn>
