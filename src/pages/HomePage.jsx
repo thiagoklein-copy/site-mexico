@@ -220,7 +220,7 @@ export function HomePage() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveTestimonial((current) => (current + 1) % testimonials.length)
-    }, 9000)
+    }, 13000)
 
     return () => window.clearInterval(intervalId)
   }, [])
