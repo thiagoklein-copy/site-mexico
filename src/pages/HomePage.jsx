@@ -452,8 +452,8 @@ export function HomePage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
             <div className="reveal map-shell">
               <MapContainer
-                center={[23.6345, -102.5528]}
-                zoom={5}
+                center={[20.15, -99.95]}
+                zoom={6}
                 minZoom={4}
                 maxZoom={17}
                 className="map-surface"
