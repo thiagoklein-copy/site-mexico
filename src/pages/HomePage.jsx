@@ -352,9 +352,6 @@ export function HomePage() {
             <h2 className="reveal mx-auto mt-4 max-w-3xl text-4xl font-semibold md:text-6xl">
               Nuestra oferta integral para impulsar tu operación
             </h2>
-            <a href="#contacto" className="btn-ghost reveal mt-8 inline-flex">
-              Ver disponibilidad
-            </a>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
               {services.map((service) => (
