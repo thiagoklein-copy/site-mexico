@@ -116,6 +116,11 @@ body {
   border-color: #c9d42b;
 }
 
+select.input-field option {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
 .map-shell {
   overflow: hidden;
   border-radius: 18px;
