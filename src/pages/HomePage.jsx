@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import L from 'leaflet'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 import { Link } from 'react-router-dom'
+import { AnimatedCounter } from '../components/AnimatedCounter'
 import { SiteFooter } from '../components/SiteFooter'
 
 const badges = ['Oficinas privadas', 'Coworking', 'Oficina virtual', 'Salas de juntas', 'Podcast room']
@@ -375,33 +376,38 @@ export function HomePage() {
         </section>
 
         <section className="px-6 py-24">
-          <div className="mx-auto grid w-full max-w-7xl gap-10 rounded-3xl bg-[#F5F5F5] p-10 lg:grid-cols-2 lg:p-14">
-            <div className="reveal">
-              <p className="section-label">Los números hablan por nosotros</p>
-              <h2 className="mt-4 text-4xl font-semibold md:text-5xl">
-                Mi Oficina En es referencia en espacios corporativos para empresas mexicanas.
-              </h2>
-              <img
-                className="mt-8 h-[300px] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
-                alt="Equipo profesional en oficina"
-              />
+          <div className="mx-auto w-full max-w-7xl rounded-3xl bg-[#F5F5F5] p-10 lg:p-14">
+            <div className="reveal text-center">
+              <p className="section-label">A través de estos años tenemos...</p>
+              <h2 className="mt-4 text-4xl font-semibold md:text-5xl">A través de estos años tenemos...</h2>
             </div>
-            <div className="grid grid-cols-2 gap-5">
-              {[
-                ['100+', 'Empresas atendidas'],
-                ['95%', 'Satisfacción de clientes'],
-                ['30%', 'Ahorro promedio en operación'],
-                ['$1B', 'Valor operado por clientes'],
-              ].map(([number, text]) => (
-                <div key={number} className="reveal rounded-2xl bg-white p-6 shadow-sm">
-                  <p className="text-5xl font-bold text-[#c9d42b]">{number}</p>
-                  <p className="mt-3 font-semibold">{text}</p>
-                  <p className="mt-2 text-sm text-[#6B7280]">
-                    Resultados medibles para equipos que buscan crecer con estructura.
-                  </p>
-                </div>
-              ))}
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <article className="reveal rounded-2xl bg-white p-6 shadow-sm">
+                <p className="font-semibold text-[#6B7280]">Años de Experiencia</p>
+                <AnimatedCounter value={25} duration={1.8} className="mt-3 text-5xl font-bold text-[#c9d42b]" />
+              </article>
+              <article className="reveal rounded-2xl bg-white p-6 shadow-sm">
+                <p className="font-semibold text-[#6B7280]">Clientes Satisfechos</p>
+                <AnimatedCounter
+                  value={5000}
+                  prefix="+"
+                  duration={1.8}
+                  className="mt-3 text-5xl font-bold text-[#c9d42b]"
+                />
+              </article>
+              <article className="reveal rounded-2xl bg-white p-6 shadow-sm">
+                <p className="font-semibold text-[#6B7280]">Ubicaciones</p>
+                <AnimatedCounter value={6} duration={1.8} className="mt-3 text-5xl font-bold text-[#c9d42b]" />
+              </article>
+              <article className="reveal rounded-2xl bg-white p-6 shadow-sm">
+                <p className="font-semibold text-[#6B7280]">Soluciones Empresariales</p>
+                <AnimatedCounter
+                  value={15}
+                  prefix="+"
+                  duration={1.8}
+                  className="mt-3 text-5xl font-bold text-[#c9d42b]"
+                />
+              </article>
             </div>
           </div>
         </section>
