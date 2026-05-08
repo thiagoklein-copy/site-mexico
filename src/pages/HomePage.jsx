@@ -605,9 +605,6 @@ export function HomePage() {
               </div>
             </div>
           </div>
-          <p className="mt-10 text-center text-sm text-white/50">
-            © Mi Oficina En. Diseñado para presentación inicial.
-          </p>
         </div>
       </footer>
     </div>
