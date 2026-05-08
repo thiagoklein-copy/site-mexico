@@ -52,20 +52,9 @@ export function SomosPage() {
         </div>
       </header>
 
-      <main className="pt-[60px]">
-        <section className="relative overflow-hidden px-6 py-24 text-white md:py-28">
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(110deg, rgba(7,27,70,0.82) 0%, rgba(7,27,70,0.62) 50%, rgba(7,27,70,0.72) 100%), url('/foto_Somos_hero.png')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-            animate={shouldReduceMotion ? undefined : { scale: [1, 1.08, 1] }}
-            transition={shouldReduceMotion ? undefined : { duration: 20, ease: 'linear', repeat: Infinity }}
-          />
-          <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center text-center">
+      <main className="bg-[#edf0f3] pt-[60px]">
+        <section className="px-6 py-12 md:py-16">
+          <div className="mx-auto w-full max-w-7xl rounded-[32px] bg-[#071b46] px-8 py-14 text-white md:px-14">
             <motion.p
               className="section-label !text-[#C5E000]"
               initial={shouldReduceMotion ? false : { opacity: 0, y: -10 }}
@@ -76,7 +65,7 @@ export function SomosPage() {
               Conoce nuestra historia
             </motion.p>
             <motion.h1
-              className="mt-4 text-6xl font-bold leading-none md:text-7xl"
+              className="mt-4 max-w-2xl text-5xl font-bold leading-[0.98] md:text-7xl"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -84,32 +73,43 @@ export function SomosPage() {
             >
               Somos
             </motion.h1>
-            <motion.div
-              className="mt-4 h-[2px] bg-[#C5E000]"
-              initial={shouldReduceMotion ? false : { width: 0 }}
-              whileInView={shouldReduceMotion ? undefined : { width: 80 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            />
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
+              Nuestro objetivo es ofrecer espacios de trabajo a empresas emergentes, pequeñas, medianas y grandes de todos
+              los sectores y a profesionales que trabajan de manera independiente.
+            </p>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl bg-white p-6 text-[#071b46]">
+                <p className="text-xs font-semibold uppercase tracking-[0.06em] text-[#6B7280]">Años de Experiencia</p>
+                <AnimatedCounter value={25} duration={1.8} className="mt-2 text-4xl font-extrabold text-[#071b46]" />
+              </div>
+              <div className="rounded-2xl bg-white p-6 text-[#071b46]">
+                <p className="text-xs font-semibold uppercase tracking-[0.06em] text-[#6B7280]">Clientes Satisfechos</p>
+                <AnimatedCounter value={5000} prefix="+" duration={1.8} className="mt-2 text-4xl font-extrabold text-[#071b46]" />
+              </div>
+              <div className="rounded-2xl bg-white p-6 text-[#071b46]">
+                <p className="text-xs font-semibold uppercase tracking-[0.06em] text-[#6B7280]">Ubicaciones</p>
+                <AnimatedCounter value={6} duration={1.8} className="mt-2 text-4xl font-extrabold text-[#071b46]" />
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-7xl px-6 py-14">
+        <section className="mx-auto w-full max-w-7xl px-6 pb-8 pt-2">
           <div className="grid gap-6 md:grid-cols-2 md:items-stretch">
             <FadeIn direction="left" delay={0}>
-              <article className="card flex h-[300px] flex-col justify-center rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <h2 className="text-3xl font-semibold md:text-4xl">Una Gran Idea</h2>
-                <p className="mt-6 text-base leading-relaxed text-[#6B7280]">
+              <article className="flex h-[320px] flex-col justify-between rounded-3xl bg-white p-8 shadow-[0_18px_45px_rgba(10,20,40,0.08)]">
+                <h2 className="text-4xl font-semibold text-[#0d172e]">Una Gran Idea</h2>
+                <p className="text-base leading-relaxed text-[#5c687e]">
                   Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
                 </p>
               </article>
             </FadeIn>
             <FadeIn direction="right" delay={0.12}>
-              <div className="overflow-hidden rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+              <div className="overflow-hidden rounded-3xl shadow-[0_18px_45px_rgba(10,20,40,0.08)]">
                 <img
                   src="/foto_Somos_interior_1.png"
                   alt="foto_Somos_interior_1"
-                  className="h-[300px] w-full rounded-2xl object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-[320px] w-full rounded-3xl object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </FadeIn>
@@ -117,18 +117,18 @@ export function SomosPage() {
 
           <div className="mt-6 grid gap-6 md:grid-cols-2 md:items-stretch">
             <FadeIn direction="right" delay={0.24}>
-              <div className="overflow-hidden rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+              <div className="overflow-hidden rounded-3xl shadow-[0_18px_45px_rgba(10,20,40,0.08)]">
                 <img
                   src="/foto_Somos_interior_2.png"
                   alt="foto_Somos_interior_2"
-                  className="h-[300px] w-full rounded-2xl object-cover object-[center_62%] transition-transform duration-700 hover:scale-105"
+                  className="h-[320px] w-full rounded-3xl object-cover object-[center_62%] transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </FadeIn>
             <FadeIn direction="left" delay={0.36}>
-              <article className="card flex h-[300px] flex-col justify-center rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <h2 className="text-4xl font-semibold">Asistencia Empresarial</h2>
-                <p className="mt-4 text-base leading-relaxed text-[#6B7280]">
+              <article className="flex h-[320px] flex-col justify-between rounded-3xl bg-white p-8 shadow-[0_18px_45px_rgba(10,20,40,0.08)]">
+                <h2 className="text-4xl font-semibold text-[#0d172e]">Asistencia Empresarial</h2>
+                <p className="text-base leading-relaxed text-[#5c687e]">
                   Nuestro objetivo es ofrecer espacios de trabajo a empresas emergentes, pequeñas, medianas y grandes de todos los sectores y a profesionales que trabajan de manera independiente.
                 </p>
               </article>
@@ -136,77 +136,62 @@ export function SomosPage() {
           </div>
         </section>
 
-        <section className="bg-white px-6 py-20">
-          <div className="mx-auto w-full max-w-7xl">
+        <section className="px-6 py-14">
+          <div className="mx-auto w-full max-w-7xl rounded-[28px] bg-white p-8 md:p-12">
             <FadeIn direction="up" delay={0}>
-              <h2 className="text-4xl font-semibold">A través de estos años tenemos...</h2>
+              <h2 className="text-center text-4xl font-semibold text-[#0d172e]">A través de estos años tenemos...</h2>
             </FadeIn>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               <FadeIn direction="up" delay={0}>
-                <article className="group relative card rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+                <article className="rounded-2xl border border-[#e2e7f0] bg-[#f8fafc] p-6">
                   <p className="font-semibold text-[#6B7280]">Años de Experiencia</p>
-                  <AnimatedCounter value={25} duration={1.8} className="text-5xl font-extrabold text-[#C5E000]" />
-                  <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#C5E000] transition-all duration-400 group-hover:w-full" />
+                  <AnimatedCounter value={25} duration={1.8} className="mt-2 text-5xl font-extrabold text-[#071b46]" />
                 </article>
               </FadeIn>
               <FadeIn direction="up" delay={0.15}>
-                <article className="group relative card rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+                <article className="rounded-2xl border border-[#e2e7f0] bg-[#f8fafc] p-6">
                   <p className="font-semibold text-[#6B7280]">Clientes Satisfechos</p>
-                  <AnimatedCounter
-                    value={5000}
-                    prefix="+"
-                    duration={1.8}
-                    className="text-5xl font-extrabold text-[#C5E000]"
-                  />
-                  <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#C5E000] transition-all duration-400 group-hover:w-full" />
+                  <AnimatedCounter value={5000} prefix="+" duration={1.8} className="mt-2 text-5xl font-extrabold text-[#071b46]" />
                 </article>
               </FadeIn>
               <FadeIn direction="up" delay={0.3}>
-                <article className="group relative card rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+                <article className="rounded-2xl border border-[#e2e7f0] bg-[#f8fafc] p-6">
                   <p className="font-semibold text-[#6B7280]">Ubicaciones</p>
-                  <AnimatedCounter value={6} duration={1.8} className="text-5xl font-extrabold text-[#C5E000]" />
-                  <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#C5E000] transition-all duration-400 group-hover:w-full" />
+                  <AnimatedCounter value={6} duration={1.8} className="mt-2 text-5xl font-extrabold text-[#071b46]" />
                 </article>
               </FadeIn>
               <FadeIn direction="up" delay={0.45}>
-                <article className="group relative card rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
+                <article className="rounded-2xl border border-[#e2e7f0] bg-[#f8fafc] p-6">
                   <p className="font-semibold text-[#6B7280]">Soluciones Empresariales</p>
-                  <AnimatedCounter
-                    value={15}
-                    prefix="+"
-                    duration={1.8}
-                    className="text-5xl font-extrabold text-[#C5E000]"
-                  />
-                  <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#C5E000] transition-all duration-400 group-hover:w-full" />
+                  <AnimatedCounter value={15} prefix="+" duration={1.8} className="mt-2 text-5xl font-extrabold text-[#071b46]" />
                 </article>
               </FadeIn>
             </div>
           </div>
         </section>
 
-        <section className="px-6 py-20">
+        <section className="px-6 pb-10">
           <FadeIn direction="up" delay={0}>
-            <div className="mx-auto w-full max-w-7xl rounded-3xl bg-[#071b46] p-10 text-white">
+            <div className="mx-auto w-full max-w-7xl rounded-[28px] bg-[#071b46] p-8 text-white md:p-10">
               <LogoMarquee logos={logos} />
-              {/* TEXTO PENDENTE */}
             </div>
           </FadeIn>
         </section>
 
         <section className="px-6 pb-24">
           <motion.div
-            className="mx-auto w-full max-w-7xl rounded-3xl bg-[#c9d42b] p-10 text-[#1a1a1a]"
+            className="mx-auto w-full max-w-7xl rounded-[28px] bg-white p-8 text-[#1a1a1a] md:p-10"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             whileInView={shouldReduceMotion ? undefined : { opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <FadeIn direction="up" delay={0.05}>
-              <p className="text-lg font-medium">
+              <p className="text-lg font-semibold text-[#0d172e]">
                 Av. Homero 229-501, Polanco I Sección, Miguel Hidalgo, C.P. 11560, CDMX
               </p>
             </FadeIn>
-            <div className="mt-6 grid gap-4 text-sm font-semibold md:grid-cols-2">
+            <div className="mt-6 grid gap-4 text-sm font-semibold text-[#5c687e] md:grid-cols-2">
               <FadeIn direction="up" delay={0.15}>
                 <p>Facebook-f Instagram Linkedin-in</p>
               </FadeIn>
