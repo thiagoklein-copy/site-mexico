@@ -329,7 +329,7 @@ export function HomePage() {
           className="relative flex min-h-[85vh] items-end overflow-hidden bg-black px-6 pb-12 pt-24 md:pb-14 md:pt-32"
           style={{
             backgroundImage:
-              "linear-gradient(105deg, rgba(0,0,0,0.58) 8%, rgba(0,0,0,0.34) 48%, rgba(0,0,0,0.22) 100%), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=80')",
+              "linear-gradient(105deg, rgba(0,0,0,0.58) 8%, rgba(0,0,0,0.34) 48%, rgba(0,0,0,0.22) 100%), url('/foto_Home_hero.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center right',
           }}
