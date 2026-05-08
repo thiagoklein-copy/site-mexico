@@ -527,7 +527,6 @@ export function HomePage() {
                 Contáctanos hoy mismo y agenda una visita para encontrar el espacio perfecto para tu
                 empresa.
               </p>
-              <button className="btn-primary mt-8">Agendar visita</button>
               <p className="mt-5 text-sm text-white/70">...o contáctanos con la información abajo.</p>
               <div className="mt-6 space-y-3 text-sm text-white/85">
                 <p className="flex items-start gap-2">
