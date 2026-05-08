@@ -460,7 +460,7 @@ export function HomePage() {
             <div className="reveal map-shell">
               <MapContainer
                 center={[20.15, -99.95]}
-                zoom={6}
+                zoom={7}
                 minZoom={4}
                 maxZoom={17}
                 className="map-surface"
