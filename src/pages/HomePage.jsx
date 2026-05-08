@@ -24,6 +24,44 @@ const services = [
   },
 ]
 
+const testimonials = [
+  {
+    quote:
+      'Gracias a Mi Oficina En encontramos una sede profesional, flexible y lista para recibir clientes desde el primer día.',
+    author: 'Ana Martínez',
+    role: 'Directora de Operaciones',
+    avatar: 'https://i.pravatar.cc/80?img=11',
+  },
+  {
+    quote:
+      'Pasamos de trabajar en cafés a tener una oficina con imagen corporativa en menos de una semana. El cambio fue total.',
+    author: 'Luis Herrera',
+    role: 'Co-fundador de startup',
+    avatar: 'https://i.pravatar.cc/80?img=32',
+  },
+  {
+    quote:
+      'La atención del equipo y la flexibilidad de planes nos permitieron crecer sin frenar operaciones ni afectar a nuestros clientes.',
+    author: 'Mariana Solís',
+    role: 'Gerente Administrativa',
+    avatar: 'https://i.pravatar.cc/80?img=21',
+  },
+  {
+    quote:
+      'Necesitábamos salas para juntas y una dirección comercial formal. Aquí resolvimos todo en un solo lugar y con excelente servicio.',
+    author: 'Carlos Méndez',
+    role: 'Director Comercial',
+    avatar: 'https://i.pravatar.cc/80?img=45',
+  },
+  {
+    quote:
+      'La ubicación en Polanco nos ayudó a transmitir más confianza a nuestros clientes y cerrar negocios con mayor facilidad.',
+    author: 'Fernanda Reyes',
+    role: 'Consultora Senior',
+    avatar: 'https://i.pravatar.cc/80?img=28',
+  },
+]
+
 const locations = [
   {
     id: 'polanco',
@@ -158,6 +196,7 @@ function MapRecenter({ coordinates }) {
 export function HomePage() {
   const [showNav, setShowNav] = useState(true)
   const [selectedLocationId, setSelectedLocationId] = useState(locations[0].id)
+  const [activeTestimonial, setActiveTestimonial] = useState(0)
 
   useRevealOnScroll()
 
@@ -178,7 +217,16 @@ export function HomePage() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveTestimonial((current) => (current + 1) % testimonials.length)
+    }, 6000)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
+
   const selectedLocation = locations.find((location) => location.id === selectedLocationId) ?? locations[0]
+  const currentTestimonial = testimonials[activeTestimonial]
 
   return (
     <div className="bg-white text-[#1A1A1A]">
@@ -373,24 +421,34 @@ export function HomePage() {
         <section className="mx-auto w-full max-w-7xl px-6 py-24 text-center">
           <p className="section-label">Testimonios</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {Array.from({ length: 20 }).map((_, index) => (
-              <img
-                key={index}
-                src={`https://i.pravatar.cc/60?img=${index + 1}`}
-                alt="Cliente"
-                className="h-12 w-12 rounded-full object-cover"
-              />
+            {testimonials.map((testimonial, index) => (
+              <button
+                key={testimonial.author}
+                type="button"
+                onClick={() => setActiveTestimonial(index)}
+                aria-label={`Ver testimonial de ${testimonial.author}`}
+                className={`rounded-full transition ${activeTestimonial === index ? 'ring-2 ring-[#c9d42b] ring-offset-2 ring-offset-white' : 'opacity-70 hover:opacity-100'}`}
+              >
+                <img src={testimonial.avatar} alt={testimonial.author} className="h-12 w-12 rounded-full object-cover" />
+              </button>
             ))}
           </div>
           <blockquote className="reveal mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
-            “Gracias a Mi Oficina En encontramos una sede profesional, flexible y lista para
-            recibir clientes desde el primer día.”
+            “{currentTestimonial.quote}”
           </blockquote>
-          <p className="mt-5 text-[#6B7280]">Ana Martínez · Directora de Operaciones</p>
+          <p className="mt-5 text-[#6B7280]">
+            {currentTestimonial.author} · {currentTestimonial.role}
+          </p>
           <div className="mt-6 flex justify-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#c9d42b]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-black/20" />
-            <span className="h-2.5 w-2.5 rounded-full bg-black/20" />
+            {testimonials.map((testimonial, index) => (
+              <button
+                key={`${testimonial.author}-dot`}
+                type="button"
+                onClick={() => setActiveTestimonial(index)}
+                aria-label={`Selecionar testimonial ${index + 1}`}
+                className={`h-2.5 w-2.5 rounded-full transition ${activeTestimonial === index ? 'bg-[#c9d42b]' : 'bg-black/20 hover:bg-black/35'}`}
+              />
+            ))}
           </div>
         </section>
 
