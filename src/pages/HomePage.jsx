@@ -529,10 +529,29 @@ export function HomePage() {
               </p>
               <button className="btn-primary mt-8">Agendar visita</button>
               <p className="mt-5 text-sm text-white/70">...o contáctanos con la información abajo.</p>
-              <div className="mt-6 space-y-2 text-sm text-white/85">
-                <p>📍 Av. Homero 229-501, Polanco I Sección, Miguel Hidalgo, C.P. 11560, CDMX</p>
-                <p>✉ info@mioficinaen.com</p>
-                <p>☎ 55-5254-2235</p>
+              <div className="mt-6 space-y-3 text-sm text-white/85">
+                <p className="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 fill-current" aria-hidden="true">
+                    <path d="M12 2.25a7.5 7.5 0 0 0-7.5 7.5c0 5.74 6.78 11.37 7.07 11.61a.67.67 0 0 0 .86 0c.29-.24 7.07-5.87 7.07-11.61a7.5 7.5 0 0 0-7.5-7.5Zm0 10.25a2.75 2.75 0 1 1 0-5.5 2.75 2.75 0 0 1 0 5.5Z" />
+                  </svg>
+                  <span>Av. Homero 229-501, Polanco I Sección, Miguel Hidalgo, C.P. 11560, CDMX</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 fill-current" aria-hidden="true">
+                    <path d="M3.75 5.25A2.25 2.25 0 0 1 6 3h12a2.25 2.25 0 0 1 2.25 2.25v.42l-8.25 5.37L3.75 5.67v-.42Zm0 2.21v11.29A2.25 2.25 0 0 0 6 21h12a2.25 2.25 0 0 0 2.25-2.25V7.46l-7.84 5.11a.75.75 0 0 1-.82 0L3.75 7.46Z" />
+                  </svg>
+                  <a href="mailto:info@mioficinaen.com" className="transition hover:text-[#c9d42b]">
+                    info@mioficinaen.com
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 fill-current" aria-hidden="true">
+                    <path d="M6.62 10.79a15.54 15.54 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.03-.24c1.12.37 2.32.57 3.56.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C11.85 21 3 12.15 3 1.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.24.2 2.44.57 3.56a1 1 0 0 1-.24 1.03l-2.2 2.2Z" />
+                  </svg>
+                  <a href="tel:+525552542235" className="transition hover:text-[#c9d42b]">
+                    55-5254-2235
+                  </a>
+                </p>
               </div>
             </div>
             <form className="space-y-4">
