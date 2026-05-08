@@ -95,9 +95,9 @@ export function SomosPage() {
         </section>
 
         <section className="mx-auto w-full max-w-7xl px-6 py-14">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 md:items-stretch">
             <FadeIn direction="left" delay={0}>
-              <article className="card rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+              <article className="card flex h-[300px] flex-col rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
                 <h2 className="text-3xl font-semibold md:text-4xl">Una Gran Idea</h2>
                 <p className="mt-6 text-[#6B7280]">
                   Pensada por Rafael Ramirez Palma en el año 2001, la idea surgió después de rentar un espacio de más de 100 m que sirviera para organizar el crecimiento de lo que para ese entonces era su primera iniciativa empresarial (Corporativo ACP).
@@ -115,7 +115,7 @@ export function SomosPage() {
             </FadeIn>
           </div>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-6 md:grid-cols-2 md:items-stretch">
             <FadeIn direction="right" delay={0.24}>
               <div className="overflow-hidden rounded-2xl shadow-sm transition-shadow duration-500 hover:shadow-xl">
                 <img
@@ -126,7 +126,7 @@ export function SomosPage() {
               </div>
             </FadeIn>
             <FadeIn direction="left" delay={0.36}>
-              <article className="card rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+              <article className="card flex h-[300px] flex-col rounded-2xl shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
                 <h2 className="text-4xl font-semibold">Asistencia Empresarial</h2>
                 <p className="mt-4 text-[#6B7280]">
                   Nuestro objetivo es ofrecer espacios de trabajo a empresas emergentes, pequeñas, medianas y grandes de todos los sectores y a profesionales que trabajan de manera independiente.
