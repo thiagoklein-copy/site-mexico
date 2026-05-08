@@ -339,20 +339,10 @@ export function HomePage() {
             </article>
           </div>
 
-          <div className="reveal mt-12 flex flex-wrap items-center gap-5">
+          <div className="reveal mt-12 flex justify-center">
             <a href="#contacto" className="btn-primary">
               Agendar visita
             </a>
-            <div className="flex">
-              {[1, 2, 3].map((avatar) => (
-                <img
-                  key={avatar}
-                  className="-ml-3 h-11 w-11 rounded-full border-2 border-white object-cover first:ml-0"
-                  src={`https://i.pravatar.cc/80?img=${avatar + 20}`}
-                  alt="Cliente"
-                />
-              ))}
-            </div>
           </div>
         </section>
 
