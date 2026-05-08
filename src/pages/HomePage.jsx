@@ -64,6 +64,63 @@ const testimonials = [
   },
 ]
 
+const benefits = [
+  {
+    title: 'Internet Rápido',
+    text: 'Contamos con internet rápido y estable para que disfrutes la mejor experiencia.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M12 18.75a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM4.23 12.6a1 1 0 1 0 1.54 1.28 8.25 8.25 0 0 1 12.46 0 1 1 0 1 0 1.54-1.28 10.25 10.25 0 0 0-15.54 0Zm3.08 2.56a1 1 0 0 0 1.54 1.28 4.25 4.25 0 0 1 6.3 0 1 1 0 1 0 1.54-1.28 6.25 6.25 0 0 0-9.38 0Zm-6.15-5.12a1 1 0 0 0 1.54 1.28 14.25 14.25 0 0 1 18.6 0 1 1 0 1 0 1.54-1.28 16.25 16.25 0 0 0-21.68 0Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Barra de Café & Snacks',
+    text: 'Recarga energías con nuestra barra de café y snacks mientras trabajas.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M3 7.5a1 1 0 0 1 1-1h12v8a4 4 0 0 1-4 4H8a5 5 0 0 1-5-5v-6Zm14 1h1.5a2.5 2.5 0 1 1 0 5H17v-5Zm-12 12a1 1 0 0 0 0 2h13a1 1 0 1 0 0-2H5ZM10.5 2.25a.75.75 0 0 0-1.06 0l-1.5 1.5a.75.75 0 0 0 1.06 1.06l1.5-1.5a.75.75 0 0 0 0-1.06Zm4 0a.75.75 0 0 0-1.06 1.06l1.5 1.5A.75.75 0 0 0 16 3.75l-1.5-1.5Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Salas de Juntas',
+    text: 'Reúnete con éxito en nuestras salas de juntas, espacios cómodos y equipados.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M3.75 4A1.75 1.75 0 0 0 2 5.75v11.5C2 18.22 2.78 19 3.75 19h16.5c.97 0 1.75-.78 1.75-1.75V5.75C22 4.78 21.22 4 20.25 4H3.75Zm.25 2h16v10H4V6Zm2.5 12a1 1 0 0 0 0 2h11a1 1 0 1 0 0-2h-11Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Instalaciones Profesionales',
+    text: 'Para potenciar tu productividad. Comodidad y funcionalidad en cada espacio.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M4 3.75A1.75 1.75 0 0 1 5.75 2h12.5A1.75 1.75 0 0 1 20 3.75v16.5A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V3.75Zm2 .25v14h12V4H6Zm6 17a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Atención Personalizada',
+    text: 'Estamos aquí para ayudarte con acompañamiento cercano en cada etapa.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M12 2.25a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5Zm-8.25 17.5c0-3.18 3.67-5.5 8.25-5.5s8.25 2.32 8.25 5.5a1 1 0 0 1-1 1H4.75a1 1 0 0 1-1-1Z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Precios Competitivos',
+    text: 'Calidad y ahorro en un solo lugar. Ofrecemos precios competitivos para ti.',
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+        <path d="M10.5 3a4.5 4.5 0 0 0 0 9h3a2.5 2.5 0 1 1 0 5h-7a1 1 0 1 0 0 2h3.5v1.5a1 1 0 1 0 2 0V19h2a4.5 4.5 0 1 0 0-9h-3a2.5 2.5 0 1 1 0-5h7a1 1 0 1 0 0-2H14V1.5a1 1 0 0 0-2 0V3h-1.5Z" />
+      </svg>
+    ),
+  },
+]
+
 const locations = [
   {
     id: 'polanco',
@@ -371,6 +428,35 @@ export function HomePage() {
                   <button className="btn-ghost mt-7">Ver más</button>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 py-24">
+          <div
+            className="mx-auto w-full max-w-7xl overflow-hidden rounded-3xl bg-[#071b46] bg-cover bg-center text-white"
+            style={{
+              backgroundImage:
+                "linear-gradient(115deg, rgba(7,27,70,0.88) 0%, rgba(7,27,70,0.82) 45%, rgba(7,27,70,0.7) 100%), url('/foto_Somos_hero.png')",
+            }}
+          >
+            <div className="p-8 md:p-12">
+              <p className="section-label !text-[#c9d42b]">Beneficios</p>
+              <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Todo lo que necesitas para trabajar mejor</h2>
+              <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                {benefits.map((benefit) => (
+                  <article
+                    key={benefit.title}
+                    className="reveal rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-[1px]"
+                  >
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#c9d42b] text-[#071b46]">
+                      {benefit.icon}
+                    </span>
+                    <h3 className="mt-5 text-3xl font-semibold leading-tight">{benefit.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/80">{benefit.text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
